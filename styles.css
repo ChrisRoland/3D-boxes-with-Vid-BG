@@ -94,3 +94,7 @@ body {
     background-color: #289cd6;
     transform: skewX(45deg);
 }
+
+.box:hover {
+    transform: rotateZ(360deg);
+}
