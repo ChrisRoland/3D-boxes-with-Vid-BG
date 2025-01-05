@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+  
+.transform {
+    position: fixed;
+    top: 20px;
+    background-color: #4eacdb;
+    border-radius: 5px;   
+    border: none;
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 5px #4eacdb99;
+    z-index: 10;
+}
+
+.transform:focus {
+    outline: none;
+    background-color: #389fd2;
+}
+
+.transform:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px #4eacdb99;
+}
+
+.boxes {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5rem;
+    flex-wrap: wrap;
+    height: 500px;
+    width: 500px;
+    transition: transform 0.4s ease;
+}
+
+.boxes.break {
+    width: 600px;
+    height: 600px;
+}
+
+.boxes.break .box {
+    transform: rotateZ(360deg);
+}
+
+.box {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    background-image: url('https://media.giphy.com/media/cOmKweWa4w0XS/giphy.gif?cid=82a1493b3zd6hrf0v779xqbqym6ryxgt1xp017ahd17defof&ep=v1_gifs_trending&rid=giphy.gif&ct=g');
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    transition: transform 0.4s ease;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: -15px;
+    width: 15px;
+    height: 100%;
+    background-color: #43bbf7;
+    transform: skewY(45deg);
+}
+.box::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 8px;
+    width: 100%;
+    height: 15px;
+    background-color: #289cd6;
+    transform: skewX(45deg);
+}
